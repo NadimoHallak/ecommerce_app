@@ -1,4 +1,5 @@
 import 'package:ecommerce_app/model/categoriesList.dart';
+import 'package:ecommerce_app/model/product_model.dart';
 import 'package:ecommerce_app/model/products_model.dart';
 import 'package:ecommerce_app/services/product_serv.dart';
 import 'package:flutter/material.dart';
@@ -24,7 +25,7 @@ class HomePage extends StatelessWidget {
               } else if (snapshot.hasData) {
                 dynamic temp = snapshot.data;
 
-                List<AllProducts> allProducts = temp;
+                List<dynamic> myProducts = temp;
                 return Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -136,24 +137,6 @@ class HomePage extends StatelessWidget {
                           return Container(
                             child: Column(
                               children: [
-                                Container(
-                                  width: 160,
-                                  // height: 240,
-                                  decoration: const BoxDecoration(
-                                    borderRadius:
-                                        BorderRadius.all(Radius.circular(20)),
-                                    image: DecorationImage(
-                                      fit: BoxFit.cover,
-                                      image: NetworkImage(
-                                        "",
-                                      ),
-                                    ),
-                                  ),
-                                  child: IconButton(
-                                    onPressed: () {},
-                                    icon: const Icon(Icons.favorite),
-                                  ),
-                                ),
                                 const SizedBox(
                                   width: 117,
                                   child: Padding(

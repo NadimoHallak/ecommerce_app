@@ -10,13 +10,16 @@ class ProductServ extends ProductBaseServices {
   getAllProducts() async {
     Response response = await dio.get(baseUrl);
     dynamic temp = response.data;
-    List<AllProducts> allProducts = List.generate(
-      temp.length,
-      (index) => AllProducts.fromMap(temp[index]),
-    );
+    // print(response.data);
+    // List<AllProducts> allProducts = List.generate(
+    //   temp.length,
+    //   (index) => AllProducts.fromMap(temp[index]),
+    // );
+    // print(allProducts.toString());
+    print(temp);
 
     if (response.data == 200) {
-      return allProducts;
+      return response.data;
     } else {
       return [];
     }
